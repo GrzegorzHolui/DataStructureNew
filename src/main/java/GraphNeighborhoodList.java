@@ -16,6 +16,11 @@ public class GraphNeighborhoodList {
         sourceNeighbors.add(new Edge(source, destination, weight));
     }
 
+    public void addEdge(Edge edge) {
+        List<Edge> sourceNeighbors = vertices.get(edge.getStartVertex());
+        sourceNeighbors.add(edge);
+    }
+
     public List<Edge> getNeighbors(Vertex vertex) {
         return vertices.get(vertex);
     }

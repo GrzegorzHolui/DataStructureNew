@@ -15,14 +15,4 @@ public class EdgeListGraph {
         return edges;
     }
 
-    public Set<Vertex> getVertices() {
-        Set<Vertex> vertices = new HashSet<>();
-
-        for (Edge edge : edges) {
-            vertices.add(edge.getStartVertex());
-            vertices.add(edge.getTargetVertex());
-        }
-
-        return vertices;
-    }
 }

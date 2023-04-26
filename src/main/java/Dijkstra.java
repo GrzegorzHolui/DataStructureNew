@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Dijkstra {
 
-    public void computePathNeighborhoodList(Vertex sourceVertex, GraphNeighborhoodList graphNeighborhoodList) {
+    public void computePathByNeighborhoodList(Vertex sourceVertex, GraphNeighborhoodList graphNeighborhoodList) {
         sourceVertex.setMinDistance(0);
         PriorityQueue<Vertex> priorityQueue = new PriorityQueue<>();
         priorityQueue.add(sourceVertex);
@@ -73,15 +73,9 @@ public class Dijkstra {
         while (!priorityQueue.isEmpty()) {
             Vertex startVertex = priorityQueue.poll();
             for (Edge edge : incidenceMatrix.getListOfEdges(startVertex)) {
-
                 Vertex nextVertex = edge.getTargetVertex();
-
                 int weight = edge.getWeight();
-
-
                 int minDistance = startVertex.getMinDistance() + weight;
-
-
                 if (minDistance < nextVertex.getMinDistance()) {
                     priorityQueue.remove(startVertex);
                     nextVertex.setPreviosVertex(startVertex);

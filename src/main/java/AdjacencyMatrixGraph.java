@@ -26,7 +26,9 @@ public class AdjacencyMatrixGraph {
             if (currentWeight > 0) {
                 char letterOfVertex = (char) (i + 65);
                 String stringLetterOfVertex = String.valueOf(letterOfVertex);
-                Vertex destination = new Vertex(stringLetterOfVertex);
+                Vertex falseDestination = new Vertex(stringLetterOfVertex);
+                int i1 = vertices.indexOf(falseDestination);
+                Vertex destination = vertices.get(i1);
                 Edge edge = new Edge(startVertex, destination, currentWeight);
                 result.add(edge);
             }
@@ -48,7 +50,4 @@ public class AdjacencyMatrixGraph {
         return matrix[sourceIndex][destIndex];
     }
 
-    public List<Vertex> getVertices() {
-        return vertices;
-    }
 }
