@@ -17,14 +17,16 @@ public class AdjacencyMatrixGraph {
     }
 
     public List<Edge> getEdges(Vertex startVertex) {
-        char letter = startVertex.getName().charAt(0);
-        int position = letter - 'A';
+//        char letter = startVertex.getName().charAt(0);
+//        int position = letter - 'A';
+        int position = Integer.parseInt(startVertex.getName());
         int row[] = matrix[position];
         List<Edge> result = new ArrayList<>();
         for (int i = 0; i < row.length; i++) {
             int currentWeight = row[i];
             if (currentWeight > 0) {
-                char letterOfVertex = (char) (i + 65);
+//                char letterOfVertex = (char) (i + 65);
+                String letterOfVertex = String.valueOf(i);
                 String stringLetterOfVertex = String.valueOf(letterOfVertex);
                 Vertex falseDestination = new Vertex(stringLetterOfVertex);
                 int i1 = vertices.indexOf(falseDestination);

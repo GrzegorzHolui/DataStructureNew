@@ -1,4 +1,8 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class GraphNeighborhoodList {
     private Map<Vertex, List<Edge>> vertices;
@@ -27,6 +31,13 @@ public class GraphNeighborhoodList {
 
     public Set<Vertex> getVertices() {
         return vertices.keySet();
+    }
+
+    @Override
+    public String toString() {
+        return "GraphNeighborhoodList{" +
+                "vertices=" + vertices +
+                '}';
     }
 }
 

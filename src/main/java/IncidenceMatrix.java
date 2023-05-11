@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class IncidenceMatrix {
     private int[][] matrix;
@@ -18,7 +17,8 @@ public class IncidenceMatrix {
 
     public List<Edge> getListOfEdges(Vertex sourceVertex) {
         Set<Edge> result = new LinkedHashSet<>();
-        int position = sourceVertex.getName().charAt(0) - 'A';
+//        int position = sourceVertex.getName().charAt(0) - 'A';
+        int position = Integer.parseInt(sourceVertex.getName());
         for (int i = 0; i < matrix[position].length; i++) {
             int isEdge = matrix[position][i];
             if (isEdge > 0) {
@@ -43,15 +43,4 @@ public class IncidenceMatrix {
         }
     }
 
-    public int[][] getMatrix() {
-        return matrix;
-    }
-
-    public List<Vertex> getVertices() {
-        return vertices;
-    }
-
-    public List<Edge> getEdges() {
-        return edges;
-    }
 }

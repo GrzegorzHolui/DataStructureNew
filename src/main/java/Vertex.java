@@ -19,24 +19,8 @@ public class Vertex implements Comparable<Vertex> {
         return name;
     }
 
-    public void addNeighbour(Edge edge) {
-        this.edges.add(edge);
-    }
-
     public List<Edge> getEdges() {
         return edges;
-    }
-
-    public void setEdges(List<Edge> edges) {
-        this.edges = edges;
-    }
-
-    public boolean isVisited() {
-        return visited;
-    }
-
-    public void setVisited(boolean visited) {
-        this.visited = visited;
     }
 
     public Vertex getPreviosVertex() {
@@ -57,12 +41,14 @@ public class Vertex implements Comparable<Vertex> {
 
     @Override
     public String toString() {
-        return name;
+        return "Vertex{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
     @Override
     public int compareTo(Vertex otherVertex) {
-        return Double.compare(this.minDistance, otherVertex.minDistance);
+        return Integer.compare(this.minDistance, otherVertex.minDistance);
     }
 
     @Override

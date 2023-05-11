@@ -98,36 +98,42 @@ class DijkstraTest {
             adjacencyMatrixGraph.addEdge(edge);
         }
         //when
+        long start = System.nanoTime();
         Dijkstra dijkstra = new Dijkstra();
         dijkstra.computePathAdjacencyMatrixGraph(vertexList.get(0), adjacencyMatrixGraph);
-//        List<Vertex> result = dijkstra.getShortestPathTo(vertexList.get(6));
         List<Vertex> result = dijkstra.getShortestPathTo(vertexList.get(2));
+        long end = System.nanoTime();
         //then
-//        List<Vertex> expected = Arrays.asList(vertexList.get(0), vertexList.get(2), vertexList.get(4), vertexList.get(6));
         List<Vertex> expected = Arrays.asList(vertexList.get(0), vertexList.get(2));
         assertThat(result).isEqualTo(expected);
+        System.out.println("Dla Macierzy sąsiedztwa czas wynosi " + (end - start) + " nano sekund");
     }
 
     @Test
     void shouldReturnGoodListOfGraphNameWhenMethodComputePathByNeighborhoodListIsUsed() {
         //given
-
+//        System.currentTimeMillis();
         for (Vertex vertex : vertexList) {
             graphNeighborhoodList.addVertex(vertex);
         }
+
         for (Edge edge : edgeList) {
             graphNeighborhoodList.addEdge(edge);
         }
 
         //when
         Dijkstra dijkstra = new Dijkstra();
+        long start = System.nanoTime();
         dijkstra.computePathByNeighborhoodList(vertexList.get(0), graphNeighborhoodList);
 //        List<Vertex> result = dijkstra.getShortestPathTo(vertexList.get(6));
         List<Vertex> result = dijkstra.getShortestPathTo(vertexList.get(2));
+        long end = System.nanoTime();
         //then
 //        List<Vertex> expected = Arrays.asList(vertexList.get(0), vertexList.get(2), vertexList.get(4), vertexList.get(6));
         List<Vertex> expected = Arrays.asList(vertexList.get(0), vertexList.get(2));
         assertThat(result).isEqualTo(expected);
+
+        System.out.println("Dla listy sąsiedztwa czas wynosi " + (end - start) + " nano sekund");
 
     }
 
@@ -139,13 +145,17 @@ class DijkstraTest {
         }
         //when
         Dijkstra dijkstra = new Dijkstra();
+        long start = System.nanoTime();
         dijkstra.computePathEdgeList(vertexList.get(0), edgeListGraph);
 //        List<Vertex> result = dijkstra.getShortestPathTo(vertexList.get(6));
         List<Vertex> result = dijkstra.getShortestPathTo(vertexList.get(2));
+        long end = System.nanoTime();
         //then
 //        List<Vertex> expected = Arrays.asList(vertexList.get(0), vertexList.get(2), vertexList.get(4), vertexList.get(6));
         List<Vertex> expected = Arrays.asList(vertexList.get(0), vertexList.get(2));
         assertThat(result).isEqualTo(expected);
+
+        System.out.println("Dla listy krawędzi czas wynosi " + (end - start) + " nano sekund");
     }
 
 
@@ -153,13 +163,18 @@ class DijkstraTest {
     void computePathAdjacencyIncidenceMatrixGraph() {
         //when
         Dijkstra dijkstra = new Dijkstra();
+        long start = System.nanoTime();
         dijkstra.computePathIncidenceMatrix(vertexList.get(0), incidenceMatrix);
 //        List<Vertex> result = dijkstra.getShortestPathTo(vertexList.get(6));
         List<Vertex> result = dijkstra.getShortestPathTo(vertexList.get(2));
+        long end = System.nanoTime();
         //then
 //        List<Vertex> expected = Arrays.asList(vertexList.get(0), vertexList.get(2), vertexList.get(4), vertexList.get(6));
         List<Vertex> expected = Arrays.asList(vertexList.get(0), vertexList.get(2));
         assertThat(result).isEqualTo(expected);
+
+        System.out.println("Dla Macierz Incydencji czas wynosi " + (end - start) + " nano sekund");
+
     }
 
 }

@@ -48,7 +48,9 @@ public class Edge {
     @Override
     public String toString() {
         return "Edge{" +
-                "whichEdge=" + whichEdge +
+                "weight=" + weight +
+                ", startVertex=" + startVertex +
+                ", targetVertex=" + targetVertex +
                 '}';
     }
 }

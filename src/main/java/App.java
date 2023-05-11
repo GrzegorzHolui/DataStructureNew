@@ -12,26 +12,26 @@ public class App {
         Vertex F = new Vertex("F");
         Vertex G = new Vertex("G");
 
-//        graphNeighborhoodList.addVertex(A);
-//        graphNeighborhoodList.addVertex(B);
-//        graphNeighborhoodList.addVertex(C);
-//        graphNeighborhoodList.addVertex(D);
-//        graphNeighborhoodList.addVertex(E);
-//        graphNeighborhoodList.addVertex(F);
-//        graphNeighborhoodList.addVertex(G);
-//
-//
-//        graphNeighborhoodList.addEdge(A, B, 5);
-//        graphNeighborhoodList.addEdge(A, C, 3);
-//        graphNeighborhoodList.addEdge(B, C, 1);
-//        graphNeighborhoodList.addEdge(B, D, 4);
-//        graphNeighborhoodList.addEdge(C, D, 2);
-//        graphNeighborhoodList.addEdge(C, E, 6);
-//        graphNeighborhoodList.addEdge(D, E, 7);
-//        graphNeighborhoodList.addEdge(D, F, 9);
-//        graphNeighborhoodList.addEdge(E, F, 8);
-//        graphNeighborhoodList.addEdge(E, G, 3);
-//        graphNeighborhoodList.addEdge(F, G, 2);
+        graphNeighborhoodList.addVertex(A);
+        graphNeighborhoodList.addVertex(B);
+        graphNeighborhoodList.addVertex(C);
+        graphNeighborhoodList.addVertex(D);
+        graphNeighborhoodList.addVertex(E);
+        graphNeighborhoodList.addVertex(F);
+        graphNeighborhoodList.addVertex(G);
+
+
+        graphNeighborhoodList.addEdge(A, B, 5);
+        graphNeighborhoodList.addEdge(A, C, 3);
+        graphNeighborhoodList.addEdge(B, C, 1);
+        graphNeighborhoodList.addEdge(B, D, 4);
+        graphNeighborhoodList.addEdge(C, D, 2);
+        graphNeighborhoodList.addEdge(C, E, 6);
+        graphNeighborhoodList.addEdge(D, E, 7);
+        graphNeighborhoodList.addEdge(D, F, 9);
+        graphNeighborhoodList.addEdge(E, F, 8);
+        graphNeighborhoodList.addEdge(E, G, 3);
+        graphNeighborhoodList.addEdge(F, G, 2);
 //
         Dijkstra dijkstra = new Dijkstra();
 //        dijkstra.computePathByNeighborhoodList(A, graphNeighborhoodList);

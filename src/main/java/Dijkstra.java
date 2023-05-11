@@ -2,21 +2,25 @@ import java.util.*;
 
 public class Dijkstra {
 
+
     public void computePathByNeighborhoodList(Vertex sourceVertex, GraphNeighborhoodList graphNeighborhoodList) {
         sourceVertex.setMinDistance(0);
         PriorityQueue<Vertex> priorityQueue = new PriorityQueue<>();
         priorityQueue.add(sourceVertex);
         while (!priorityQueue.isEmpty()) {
             Vertex startVertex = priorityQueue.poll();
-            for (Edge edge : graphNeighborhoodList.getNeighbors(startVertex)) {
-                Vertex nextVertex = edge.getTargetVertex();
-                int weight = edge.getWeight();
-                int minDistance = startVertex.getMinDistance() + weight;
-                if (minDistance < nextVertex.getMinDistance()) {
-                    priorityQueue.remove(startVertex);
-                    nextVertex.setPreviosVertex(startVertex);
-                    nextVertex.setMinDistance(minDistance);
-                    priorityQueue.add(nextVertex);
+            List<Edge> neighbors = graphNeighborhoodList.getNeighbors(startVertex);
+            if (neighbors != null) {
+                for (Edge edge : graphNeighborhoodList.getNeighbors(startVertex)) {
+                    Vertex nextVertex = edge.getTargetVertex();
+                    int weight = edge.getWeight();
+                    int minDistance = startVertex.getMinDistance() + weight;
+                    if (minDistance < nextVertex.getMinDistance()) {
+                        priorityQueue.remove(startVertex);
+                        nextVertex.setPreviosVertex(startVertex);
+                        nextVertex.setMinDistance(minDistance);
+                        priorityQueue.add(nextVertex);
+                    }
                 }
             }
         }
